@@ -1,9 +1,10 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import MenuItem from "../../../components/MenuItem/MenuItem";
 import useMenu from "../../../hooks/useMenu";
+import ViewMenuBtn from "../../../components/ViewMenuBtn/ViewMenuBtn";
 
 const PopularMenu = () => {
-  const [menu] = useMenu([]);
+  const [menu] = useMenu();
   const popular = menu.filter((item) => item?.category === "popular");
   // useEffect(() => {
   //   fetch("/menu.json")
@@ -31,9 +32,7 @@ const PopularMenu = () => {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="border-b-4 mt-5 text-xl font-semibold rounded-md py-2 px-4 hover:text-white border-slate-800 hover:border-slate-800 hover:bg-slate-800">
-            View Full Menu
-          </button>
+          <ViewMenuBtn />
         </div>
       </div>
     </section>
