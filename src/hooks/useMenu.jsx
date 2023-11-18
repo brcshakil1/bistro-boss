@@ -7,7 +7,7 @@ const useMenu = () => {
   // const [loading, setLoading] = useState(true);
   const axiosPublic = useAxiosPublic();
   // useEffect(() => {
-  //   fetch("http://localhost:5000/api/v1/menu")
+  //   fetch("https://bistro-boss-server-delta-ebon.vercel.app/api/v1/menu")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setMenu(data);

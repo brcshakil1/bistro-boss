@@ -89,7 +89,9 @@ const Router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/menu/${params.id}`),
+          fetch(
+            `https://bistro-boss-server-delta-ebon.vercel.app/api/v1/menu/${params.id}`
+          ),
       },
       {
         path: "/dashboard/users",
