@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import toast from "react-hot-toast";
+import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
+  const [cart] = useCart();
+  console.log(cart);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => toast.success("User logged out!"))
+      .catch((err) => console.log(err.message));
+  };
   const navOptions = (
     <>
       <li>
@@ -12,6 +26,36 @@ const Navbar = () => {
       <li>
         <Link to="/order/salad">Order</Link>
       </li>
+      <li>
+        <Link to="/dashboard/cart">
+          <button className="btn">
+            <FaShoppingCart />
+            <div className="badge badge-secondary">+{cart.length}</div>
+          </button>
+        </Link>
+      </li>
+
+      {user ? (
+        <>
+          {/* <li>{user?.displayName}</li>
+          <li>
+            <img
+              className="w-14 h-14 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          </li> */}
+          <button onClick={handleLogout} className="btn btn-ghost">
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
     </>
   );
   return (

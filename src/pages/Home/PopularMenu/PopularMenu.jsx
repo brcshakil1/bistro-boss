@@ -17,8 +17,6 @@ const PopularMenu = () => {
   //     });
   // }, []);
 
-  console.log(menu);
-
   return (
     <section>
       <SectionTitle

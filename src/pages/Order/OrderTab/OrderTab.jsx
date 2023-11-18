@@ -13,7 +13,7 @@ const OrderTab = ({ food }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-
+  console.log("fooooood", food);
   return (
     <div>
       <Swiper
@@ -24,13 +24,7 @@ const OrderTab = ({ food }) => {
         <SwiperSlide>
           <div className="grid md:grid-cols-3 gap-5 py-10">
             {food.slice(0, 6).map((item) => (
-              <FoodCard
-                key={item._id}
-                img={item.image}
-                title={item.category}
-                desc={item.recipe}
-                price={item.price}
-              />
+              <FoodCard key={item._id} item={item && item} />
             ))}
           </div>
         </SwiperSlide>
@@ -38,13 +32,7 @@ const OrderTab = ({ food }) => {
           <SwiperSlide>
             <div className="grid md:grid-cols-3 gap-5 py-10">
               {food.slice(6, 12).map((item) => (
-                <FoodCard
-                  key={item._id}
-                  img={item.image}
-                  title={item.category}
-                  desc={item.recipe}
-                  price={item.price}
-                />
+                <FoodCard key={item._id} item={item} />
               ))}
             </div>
           </SwiperSlide>
@@ -53,13 +41,7 @@ const OrderTab = ({ food }) => {
           <SwiperSlide>
             <div className="grid md:grid-cols-3 gap-5 py-10">
               {food.slice(12, 18).map((item) => (
-                <FoodCard
-                  key={item._id}
-                  img={item.image}
-                  title={item.category}
-                  desc={item.recipe}
-                  price={item.price}
-                />
+                <FoodCard key={item._id} item={item} />
               ))}
             </div>
           </SwiperSlide>

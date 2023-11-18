@@ -9,7 +9,7 @@ const ChefRecommends = () => {
         <SectionTitle subHeading="---Should Try---" heading="CHEF RECOMMENDS" />
       </div>
       <div className="grid md:grid-cols-3 pt-10">
-        <FoodCard
+        {/* <FoodCard
           img={img1}
           title={"Caeser Salad"}
           desc={"If a dog chews shoes whose shoes does he choose?"}
@@ -23,7 +23,7 @@ const ChefRecommends = () => {
           img={img1}
           title={"Caeser Salad"}
           desc={"If a dog chews shoes whose shoes does he choose?"}
-        />
+        /> */}
       </div>
     </div>
   );
