@@ -14,6 +14,7 @@ import AddItems from "../pages/Home/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../pages/Home/Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../pages/Home/Dashboard/UpdateItem/UpdateItem";
+import Payment from "./../pages/Home/Dashboard/Payment/Payment";
 
 const Router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const Router = createBrowserRouter([
         path: "/dashboard/cart",
         element: <Cart />,
       },
+      {
+        path: "/dashboard/payment",
+        element: <Payment />,
+      },
       // admin only routes
       {
         path: "/dashboard/addItems",
@@ -89,9 +94,7 @@ const Router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://bistro-boss-server-delta-ebon.vercel.app/api/v1/menu/${params.id}`
-          ),
+          fetch(`http://localhost:5000/api/v1/menu/${params.id}`),
       },
       {
         path: "/dashboard/users",
